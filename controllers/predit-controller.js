@@ -1,6 +1,4 @@
 import axios from 'axios';
-
-
 export const predict = async (req, res) => {
     const { responses } = req.body;
 

@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(
   cors({
-    origin: ["https://eduwise-ten.vercel.app/"],
+    origin: ["https://eduwise-ten.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
   })

@@ -21,14 +21,10 @@ export const register = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const user = await Users.create({
-        
+    const user = await Users.create({  
         email,
         username,
         password : hashedPassword,
-   
-        
-     
     });
 
     const newUser = await user.save();
@@ -56,7 +52,7 @@ export const login = async (req, res) => {
 
       
 
-        // Jika langganan aktif, lanjutkan login
+        
         const accessToken = generateAccessToken(user, user.email);
         const refreshToken = generateRefreshToken(user);
 

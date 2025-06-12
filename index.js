@@ -2,10 +2,12 @@ import express from 'express'
 import dotenv from "dotenv"
 import bodyParser from 'body-parser'
 import cors from "cors"
+import preditRouter from './router/predit-router.js'
+import { spawn } from "child_process"
+
+
 import cookieParser from 'cookie-parser'
 import connectDB from './config/db.js'
-
-
 // router
 import authRouter from './router/auth-router.js'
 
@@ -29,10 +31,11 @@ app.use(
   })
 );
 
-// test aja
-
 // Router
  app.use("/api/auth", authRouter)
+ app.use("/api/predict", preditRouter)
+
+
 // Router
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
